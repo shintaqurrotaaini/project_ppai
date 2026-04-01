@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peta Jateng VR</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+
+<body>
+
+<!-- PENTING: ini biar klik pakai mouse -->
+<a-scene cursor="rayOrigin: mouse">
+
+  <!-- CAMERA -->
+  <a-camera position="0 8 10" rotation="-30 0 0">
+    <a-cursor raycaster="objects: .klik" fuse="false"></a-cursor>
+  </a-camera>
+
+  <!-- LIGHT -->
+  <a-light type="ambient" intensity="0.6"></a-light>
+  <a-light type="directional" position="2 4 2" intensity="1"></a-light>
+
+  <!-- MAP -->
+  <a-entity id="map">
+
+    <a-image 
+      class="not-click"
+      src="peta-jateng_2.png"
+      rotation="-90 0 0"
+      width="12"
+      height="12"
+      material="shader: flat; npot: true;">
+    </a-image>
+
+    <!-- SEMARANG -->
+    <a-entity position="0 0.2 1">
+      <a-sphere class="klik" id="btn1" radius="0.2" color="red"></a-sphere>
+      <a-entity id="k1" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Semarang" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- SOLO -->
+    <a-entity position="2.5 0.2 -1">
+      <a-sphere class="klik" id="btn2" radius="0.2" color="blue"></a-sphere>
+      <a-entity id="k2" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Solo" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- MAGELANG -->
+    <a-entity position="-1.5 0.4 0">
+      <a-sphere class="klik" id="btn3" radius="0.2" color="green"></a-sphere>
+      <a-entity id="k3" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Magelang" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- PURWOKERTO -->
+    <a-entity position="-4 0.2 -1">
+      <a-sphere class="klik" id="btn4" radius="0.2" color="orange"></a-sphere>
+      <a-entity id="k4" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Purwokerto" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- TEGAL -->
+    <a-entity position="-3 0.2 3">
+      <a-sphere class="klik" id="btn5" radius="0.2" color="purple"></a-sphere>
+      <a-entity id="k5" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Tegal" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- PEKALONGAN -->
+    <a-entity position="-1 0.2 2">
+      <a-sphere class="klik" id="btn6" radius="0.2" color="pink"></a-sphere>
+      <a-entity id="k6" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Pekalongan" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- SALATIGA -->
+    <a-entity position="0.5 0.4 0">
+      <a-sphere class="klik" id="btn7" radius="0.2" color="cyan"></a-sphere>
+      <a-entity id="k7" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Salatiga" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- KUDUS -->
+    <a-entity position="2 0.2 2">
+      <a-sphere class="klik" id="btn8" radius="0.2" color="yellow"></a-sphere>
+      <a-entity id="k8" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Kudus" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- PATI -->
+    <a-entity position="3 0.2 2">
+      <a-sphere class="klik" id="btn9" radius="0.2" color="brown"></a-sphere>
+      <a-entity id="k9" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Pati" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+    <!-- WONOSOBO -->
+    <a-entity position="-2 0.4 1">
+      <a-sphere class="klik" id="btn10" radius="0.2" color="lime"></a-sphere>
+      <a-entity id="k10" visible="false" look-at="[camera]">
+        <a-plane position="0 1 0" width="2" height="1" color="white"></a-plane>
+        <a-text value="Wonosobo" position="0 1 0.01" align="center" color="black"></a-text>
+      </a-entity>
+    </a-entity>
+
+  </a-entity>
+
+  <!-- SCRIPT -->
+  <script>
+  document.querySelector("a-scene").addEventListener("loaded", () => {
+
+    const mapping = {
+      btn1: "k1",
+      btn2: "k2",
+      btn3: "k3",
+      btn4: "k4",
+      btn5: "k5",
+      btn6: "k6",
+      btn7: "k7",
+      btn8: "k8",
+      btn9: "k9",
+      btn10: "k10"
+    };
+
+    Object.keys(mapping).forEach(btnId => {
+      let btn = document.getElementById(btnId);
+      let info = document.getElementById(mapping[btnId]);
+
+      btn.addEventListener("click", () => {
+        info.setAttribute("visible", true); // langsung muncul
+      });
+    });
+
+  });
+
+  // DRAG MAP
+  let isDown = false, lastX = 0, lastY = 0;
+
+  document.addEventListener("mousedown", e => {
+    isDown = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mouseup", () => isDown = false);
+
+  document.addEventListener("mousemove", e => {
+    if(!isDown) return;
+
+    let dx = (e.clientX - lastX) * 0.02;
+    let dy = (e.clientY - lastY) * 0.02;
+
+    let map = document.getElementById("map");
+    let pos = map.getAttribute("position") || {x:0,y:0,z:0};
+
+    map.setAttribute("position", {
+      x: pos.x + dx,
+      y: pos.y,
+      z: pos.z + dy
+    });
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+  </script>
+
+</a-scene>
+</body>
+</html>
